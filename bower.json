@@ -1,0 +1,20 @@
+{
+  "name": "consumonet",
+  "authors": [
+    "Max W. G. Damasceno <maxwilljf@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chartist": "^0.11.4"
+  }
+}

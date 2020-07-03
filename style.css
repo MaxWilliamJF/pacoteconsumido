@@ -1,0 +1,36 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+.ct-perfect-fourth > svg {
+    left: 12.5%;
+}
+
+.ct-series-a .ct-line,
+.ct-series-a .ct-point {
+  stroke: blue;
+}
+
+#legandaConsumido {
+    background-color: blue;
+}
+
+.ct-series-b .ct-line,
+.ct-series-b .ct-point {
+  stroke: green;
+}
+
+#legandaEstimadoSemanal {
+    background-color: green;
+}
+
+#legandaEstimadoDiario {
+    background-color: lightcoral;
+}
+
+.legendaGrafico {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}

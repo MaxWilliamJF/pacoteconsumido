@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Consumo do pacote de dados - Zamed</title>
+</head>
+
+<body>
+    <h1>Consumo/Previsão de consumo pacote de dados</h1>
+    <div>
+        <h2>Este ciclo (Data inicial, data final)</h2>
+        <span id="consumidoEsteCiclo"></span>Gb / <span id="tamanhoPacote"></span>Gb
+    </div>
+    <div id="chart">
+        <div class="ct-chart ct-perfect-fourth"></div>
+        <div id="legenda">
+            <span class="legendaGrafico" id="legandaConsumido"></span> Dados consumidos
+            <span class="legendaGrafico" id="legandaEstimadoSemanal"></span> Previsão baseado em média diária
+            <span class="legendaGrafico" id="legandaEstimadoDiario"></span> Previsão baseado em média semanal
+        </div>
+    </div>
+    <script src="bower_components/chartist/dist/chartist.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
