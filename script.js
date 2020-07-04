@@ -51,7 +51,7 @@ function exibirTamanhoPacote (pacote) {
 
 var dadosProGrafico = {
     // A labels array that can contain any sort of values
-    labels: ['2020-06-29', '2020-07-02', '2020-07-06', '2020-07-13'],
+    labels: ['2020-06-29', '2020-07-02', '2020-07-06', '2020-07-13', '2020-07-19'],
     // Our series array that contains series objects or in this case series data arrays
     series: [
         [17, 26],
@@ -68,6 +68,5 @@ new Chartist.Line(
     {
         low: 0,
         high: 500,
-        width: '75%',
-        height: '50%'
+        width: '90%'
     });

@@ -4,12 +4,22 @@ body {
 }
 
 .ct-perfect-fourth > svg {
-    left: 12.5%;
+    left: 5%;
+}
+
+.ct-perfect-fourth::before {
+    padding-bottom: 25%;
 }
 
 .ct-series-a .ct-line,
 .ct-series-a .ct-point {
   stroke: blue;
+}
+
+#legenda {
+    width: 90%;
+    text-align: left;
+    margin: 2em auto 0;
 }
 
 #legandaConsumido {
