@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <meta name="theme-color" content="#f27b1f">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css" id="maincsslink">
     <title>Consumo do pacote de dados - Zamed</title>
 </head>
 
 <body>
-    <h1>Consumo/Previsão de consumo pacote de dados</h1>
+    <div class="wrapper">
+        <h1>Consumo/Previsão de consumo pacote de dados</h1>
+    </div>
     <div>
         <h2>Este ciclo (19/06/20, 19/07/20)</h2>
         <span id="consumidoEsteCiclo"></span>Gb / <span id="tamanhoPacote"></span>Gb
@@ -30,6 +33,7 @@
             </div>
         </div>
     </div>
+    <span id="darkMode" data-dm="off">Habilitar/desabilitar dark mode</span>
     <script src="bower_components/chartist/dist/chartist.min.js"></script>
     <script src="script.js"></script>
 </body>

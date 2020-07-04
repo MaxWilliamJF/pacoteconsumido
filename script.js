@@ -59,7 +59,8 @@ function exibirTamanhoPacote (pacote) {
 }
 
 function dadosProGrafico (medicoes) {
-    dadosConsumidos = medicoes.map(medicao => medicao.consumido);
+    const dadosConsumidos = medicoes.map(medicao => medicao.consumido);
+    const diasUteis = 26;
 
     // Tornar datas dinâmicas (Definir intervalo. Definir período [Mês atual? pacote? Datas medias + X?])
     const datas = ['2020-06-19', '2020-06-29', '2020-07-02', '2020-07-06', '2020-07-13', '2020-07-19'].map(
@@ -72,7 +73,31 @@ function dadosProGrafico (medicoes) {
         labels: datas,
         series: [
             dadosConsumidos,
-            [0, (17/1) * 26, (26/2) * 26]
+            [0, (17/1) * diasUteis, (26/2) * diasUteis]
         ]
     }
 }
+
+// "Dark mode"
+const csslinkelm = document.getElementById('maincsslink');
+const darkMode = document.getElementById('darkMode');
+darkMode.addEventListener('click', (item) => {
+    console.log('Darkmode', item.target);
+    console.log('Darkmode.target.dataset', item.target.dataset);
+
+    changeDarkMode(item.target, csslinkelm, item.target.dataset.dm)
+});
+
+function changeDarkMode (darkMode, csslinkelm, mode) {
+    console.log(darkMode.dataset);
+    if (mode === 'off') {
+        darkMode.dataset.dm = 'on';
+        csslinkelm.href = 'style-dark.css';
+    }
+    
+    if (mode === 'on') {
+        darkMode.dataset.dm = 'off';
+        csslinkelm.href = 'style.css';
+    }
+}
+// Fim "dark mode"
