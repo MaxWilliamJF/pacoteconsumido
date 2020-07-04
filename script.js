@@ -9,10 +9,19 @@ function letsDoIt (dados) {
 
     const qtdMedicoes = quantidadeMedicoes(dados.medicao);
     const consumido = totalConsumido(dados.medicao, qtdMedicoes);
-    console.log('Total consumido: ', consumido);
+    const osDadosProGrafico = dadosProGrafico(dados.medicao);
 
     exibirTotalConsumido(consumido);
     exibirTamanhoPacote(dados.pacote);
+
+    new Chartist.Line(
+        '.ct-chart',
+        osDadosProGrafico,
+        {
+            low: 0,
+            high: 500,
+            width: '90%'
+        });
 }
 
 function quantidadeMedicoes (medicoes) {
@@ -49,24 +58,21 @@ function exibirTamanhoPacote (pacote) {
     elmTamanhoPacote.innerHTML = pacote;
 }
 
-var dadosProGrafico = {
-    // A labels array that can contain any sort of values
-    labels: ['2020-06-29', '2020-07-02', '2020-07-06', '2020-07-13', '2020-07-19'],
-    // Our series array that contains series objects or in this case series data arrays
-    series: [
-        [17, 26],
-        [(17/1) * 26, (26/2) * 26]
-    ]
-};
-  
-// Create a new line chart object where as first parameter we pass in a selector
-// that is resolving to our chart container element. The Second parameter
-// is the actual data object.
-new Chartist.Line(
-    '.ct-chart',
-    dadosProGrafico,
-    {
-        low: 0,
-        high: 500,
-        width: '90%'
-    });
+function dadosProGrafico (medicoes) {
+    dadosConsumidos = medicoes.map(medicao => medicao.consumido);
+
+    // Tornar datas dinâmicas (Definir intervalo. Definir período [Mês atual? pacote? Datas medias + X?])
+    const datas = ['2020-06-19', '2020-06-29', '2020-07-02', '2020-07-06', '2020-07-13', '2020-07-19'].map(
+        data => {
+            return new Date(data).toLocaleDateString('pt-BR');
+        }
+    );
+
+    return {
+        labels: datas,
+        series: [
+            dadosConsumidos,
+            [0, (17/1) * 26, (26/2) * 26]
+        ]
+    }
+}
