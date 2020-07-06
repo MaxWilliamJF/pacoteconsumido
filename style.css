@@ -67,9 +67,9 @@ body {
     bottom: 2em;
     right: 2em;
     background-color: #000;
-    color: #fff;
-    padding: 1em;
+    padding: .8em 1.2em;
     border-radius: 2em;
+    width: 20px;
 }
 
 #darkMode:hover {

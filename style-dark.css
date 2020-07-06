@@ -76,12 +76,11 @@ body {
     position: absolute;
     bottom: 2em;
     right: 2em;
-    background-color: #f27b1f;
-    color: #000;
-    padding: 1em;
+    background-color: #fff;
+    padding: .8em 1.2em;
     border-radius: 2em;
+    width: 20px;
 }
-
 
 #darkMode:hover {
     cursor: pointer;
