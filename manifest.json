@@ -1,0 +1,9 @@
+{
+    "name": "4G Zamed Logística",
+    "short_name": "4GZamed",
+    "theme_color": "#f27b1f",
+    "background_color": "#2196f3",
+    "display": "browser",
+    "scope": "/",
+    "start_url": "/pacoteconsumido"
+  }
