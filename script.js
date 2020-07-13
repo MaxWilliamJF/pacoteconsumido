@@ -63,7 +63,7 @@ function dadosProGrafico (medicoes) {
     const diasUteis = 26;
 
     // Tornar datas dinâmicas (Definir intervalo. Definir período [Mês atual? pacote? Datas medias + X?])
-    const datas = ['2020-06-19', '2020-06-29', '2020-07-02', '2020-07-06', '2020-07-09', '2020-07-19'].map(
+    const datas = ['2020-06-19', '2020-06-29', '2020-07-02', '2020-07-06', '2020-07-09', '2020-07-14', '2020-07-19'].map(
         data => {
             return new Date(data).toLocaleDateString('pt-BR');
         }
@@ -73,7 +73,7 @@ function dadosProGrafico (medicoes) {
         labels: datas,
         series: [
             dadosConsumidos,
-            [0, (17/1) * diasUteis, (26/2) * diasUteis, (40/6) * diasUteis, (62/10) * diasUteis]
+            [0, (17/1) * diasUteis, (26/2) * diasUteis, (40/6) * diasUteis, (62/10) * diasUteis, (74/14) * diasUteis]
         ]
     }
 }
