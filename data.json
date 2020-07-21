@@ -2,34 +2,14 @@
     "pacote": 500,
     "medicao": [
         {
-            "data": "2020-06-29",
+            "data": "2020-07-19",
             "hora": "",
             "consumido": 0
         },
         {
-            "data": "2020-06-29",
+            "data": "2020-07-21",
             "hora": "",
-            "consumido": 17
-        },
-        {
-            "data": "2020-07-02",
-            "hora": "",
-            "consumido": 26
-        },
-        {
-            "data": "2020-07-06",
-            "hora": "",
-            "consumido": 40
-        },
-        {
-            "data": "2020-07-09",
-            "hora": "",
-            "consumido": 62
-        },
-        {
-            "data": "2020-07-14",
-            "hora": "",
-            "consumido": 74
+            "consumido": 8
         }
     ]
 }   

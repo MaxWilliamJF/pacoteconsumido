@@ -62,6 +62,10 @@ body {
     margin-right: .3em;
 }
 
+#historico {
+    margin-top: 3em;
+}
+
 #darkMode {
     position: absolute;
     bottom: 2em;

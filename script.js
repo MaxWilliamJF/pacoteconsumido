@@ -2,7 +2,6 @@ fetch('data.json')
   .then(response => response.json())
   .then(data => letsDoIt(data));
 
-
 // Função 'principal' do app
 function letsDoIt (dados) {
     console.log('Dados: ', dados);
@@ -14,7 +13,7 @@ function letsDoIt (dados) {
     exibirTotalConsumido(consumido);
     exibirTamanhoPacote(dados.pacote);
 
-    new Chartist.Line(
+    const chart = new Chartist.Line(
         '.ct-chart',
         osDadosProGrafico,
         {
@@ -22,6 +21,11 @@ function letsDoIt (dados) {
             high: 500,
             width: '90%'
         });
+
+    const qtd = chart.data.series[1].length;
+    const previsao = chart.data.series[1][qtd - 1];
+
+    exibirPrevisaoConsumo(previsao);
 }
 
 function quantidadeMedicoes (medicoes) {
@@ -58,12 +62,22 @@ function exibirTamanhoPacote (pacote) {
     elmTamanhoPacote.innerHTML = pacote;
 }
 
+function exibirPrevisaoConsumo (previsao) {
+    const elmPrevisaoConsumo = document.getElementById('previsaoConsumo');
+    if (!elmPrevisaoConsumo) {
+        console.error('Elemento "previsão de consumo" não encontrado');
+        return false;
+    }
+
+    elmPrevisaoConsumo.innerHTML = previsao;
+}
+
 function dadosProGrafico (medicoes) {
     const dadosConsumidos = medicoes.map(medicao => medicao.consumido);
     const diasUteis = 26;
 
     // Tornar datas dinâmicas (Definir intervalo. Definir período [Mês atual? pacote? Datas medias + X?])
-    const datas = ['2020-06-19', '2020-06-29', '2020-07-02', '2020-07-06', '2020-07-09', '2020-07-14', '2020-07-19'].map(
+    const datas = ['2020-07-19', '2020-07-21', '2020-07-27', '2020-08-03', '2020-08-10', '2020-08-17'].map(
         data => {
             return new Date(data).toLocaleDateString('pt-BR');
         }
@@ -73,7 +87,7 @@ function dadosProGrafico (medicoes) {
         labels: datas,
         series: [
             dadosConsumidos,
-            [0, (17/1) * diasUteis, (26/2) * diasUteis, (40/6) * diasUteis, (62/10) * diasUteis, (74/14) * diasUteis]
+            [0, (8/2) * diasUteis]
         ]
     }
 }
