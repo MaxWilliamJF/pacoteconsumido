@@ -24,8 +24,9 @@ function letsDoIt (dados) {
 
     const qtd = chart.data.series[1].length;
     const previsao = chart.data.series[1][qtd - 1];
+    const roundedPrev = Number.parseFloat(previsao).toFixed(2);
 
-    exibirPrevisaoConsumo(previsao);
+    exibirPrevisaoConsumo(roundedPrev);
 }
 
 function quantidadeMedicoes (medicoes) {
@@ -87,7 +88,7 @@ function dadosProGrafico (medicoes) {
         labels: datas,
         series: [
             dadosConsumidos,
-            [0, (8/2) * diasUteis]
+            [0, (8/2) * diasUteis, (39.5/7) * diasUteis]
         ]
     }
 }
