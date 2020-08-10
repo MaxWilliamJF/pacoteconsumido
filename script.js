@@ -88,7 +88,13 @@ function dadosProGrafico (medicoes) {
         labels: datas,
         series: [
             dadosConsumidos,
-            [0, (8/2) * diasUteis, (39.5/7) * diasUteis]
+            [
+                0,
+                (8/2) * diasUteis,
+                (39.5/7) * diasUteis,
+                (83.5/14) * diasUteis,
+                (119.5/20) * diasUteis
+            ]
         ]
     }
 }
